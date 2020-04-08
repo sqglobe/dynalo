@@ -35,7 +35,7 @@ inline std::string extension() { return std::string("so");  }
 inline
 native::handle open(const std::string& dyn_lib_path)
 {
-    native::handle lib_handle = ::dlopen(dyn_lib_path.c_str(), RTLD_LAZY);
+    native::handle lib_handle = ::dlopen(dyn_lib_path.c_str(), RTLD_NOW | RTLD_DEEPBIND | RTLD_LOCAL);
     if (lib_handle == nullptr)
     {
         throw std::runtime_error(std::string("Failed to open [dyn_lib_path:") + dyn_lib_path + "]: " + last_error());

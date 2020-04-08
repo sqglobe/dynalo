@@ -3,7 +3,7 @@
 #include <string>
 #include <stdexcept>
 
-#include <Windows.h>
+#include <windows.h>
 #include <strsafe.h>
 
 namespace dynalo { namespace detail
